@@ -1,0 +1,486 @@
+/* CSS Document */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+html, body {
+  height:100%;
+  width: 210em;
+  position: absolute;
+  bottom:0;
+  margin:0;
+}
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+/* jouw CSS vanaf hier */
+
+/* Custom Properties */
+
+:root {
+  --wit: rgb(255, 255, 255);
+  --rood: rgb(255, 0, 0);
+  --groen: rgb(0, 128, 0);
+  --geel: rgb(255, 255, 0);
+  --shadowgrijs: rgb(128, 128, 128);
+  --zwart: rgb(0, 0, 0);
+
+  --Yoshifont: "Press Start 2P";
+}
+
+/* Styling achtergrond */
+#achtergrond {
+  height:100%;
+  width:100%;
+  position: fixed;
+  display:flex;
+  bottom:0;
+  margin:0;
+  opacity:70%;
+  object-fit: cover;
+}
+
+/* Styling Tekstkader + losse tekst */
+p {
+  color:var(--wit);
+  font-family:var(--Yoshifont);
+  text-align: center;
+}
+
+.tekstvlak {
+  width:50em;
+  height:11em;
+  position:fixed;
+  justify-content: center;
+  left:2em;
+  top:3em;
+  background-color: var(--wit);
+  border: .5em  dashed var(--rood);
+  box-shadow: 0.2em 0.2em 0.2em 0em var(--shadowgrijs);
+}
+
+.tekstvlak h1 {
+  color: var(--zwart);
+  font-family:var(--Yoshifont);
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.5em;
+  margin: 1em 1em 0.5em 1.5em;  
+}
+
+.tekstvlak p {
+  color: var(--zwart);
+  font-size: 11px;
+  text-align: left;
+  line-height: 1.7em;
+  margin:1.5em 15em 3em 2em;
+}
+
+
+/* Styling Groene Pijp */
+.groenePijp {
+  background:none;
+  border:none;
+  display: grid;
+  justify-items: center;
+  position: absolute;
+  bottom: 0;
+  margin:0;
+  padding:0;
+  font-size: 1em;
+}
+
+.groenePijp div:nth-of-type(1) {
+  width: 8em;
+  height: 3em;
+  border-radius: .5em;
+  background-color: var(--groen);
+}
+
+.groenePijp div:nth-of-type(2) {
+  width: 7em;
+  height: 10em;
+  background-color: var(--groen);
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 1em 1em -1em var(--zwart);
+}
+
+.groenePijp p:nth-of-type(1) {
+  font-size: 1.3em;
+  padding:0em;
+  margin-top:1.5em;
+}
+
+.groenePijp p:nth-of-type(2) {
+  font-size: .9em;
+  line-height: 1.5em;
+  padding:0em 0.6em;
+}
+
+/* Styling Joshi deel 1 */
+.yoshi1 {
+  position: absolute;
+  left: 2em;
+  bottom: 12em;
+  width: 7em;
+  height: auto;
+  margin: 0;
+  display: grid;
+}
+
+.groenePijp.een {
+  left:2em;
+}
+
+.groenePijp.een:hover {
+  opacity:80%;
+}
+
+
+.ei.een img {
+  position: absolute;
+  left: 10em;
+  bottom: 17em;
+  width: 12em;
+  height: auto;
+}
+
+/* animatie ei 1 */
+@keyframes draai {
+  0% {
+    transform:translatex(0);
+  }
+
+  25% {
+    transform:translatex(3em) rotate(90deg) ;
+  }
+
+  50% {
+    transform:translatex(8em) rotate(180deg) ;
+  }
+
+  75% {
+    transform: translatex(12em) rotate(270deg);
+  }
+
+  100% {
+    transform: translatex(16em) rotate(360deg);
+  }
+}
+
+.ei.een img:hover {
+  animation-name:draai;
+  animation-duration:1s;
+  animation-delay:0s;
+  animation-fill-mode:none, 
+}
+
+
+/* Styling Blokjes horizontaal */
+.blokjeHorizontaal.een {
+  display: flex;
+  position: absolute;
+  bottom: 10em;
+  left: 12em;
+}
+
+.blokjeHorizontaal img {
+  width: 7em;
+  height: auto;
+  margin: .5em;
+}
+
+/* Styling Joshi Deel 2 */
+.yoshi2 {
+  position: absolute;
+  left: 1em;
+  bottom: 12em;
+  width: 7em;
+  margin: 0;
+  display: block;
+}
+
+.groenePijp.twee {
+  left:38em;
+}
+
+.groenePijp.twee:hover {
+  opacity: 80%;
+}
+
+/* Styling Blokjes hoek */
+.blokjeHoek {
+  display: flex;
+  position: absolute;
+  bottom: 0em;
+  left: 48em;
+}
+
+.blokjeHoek img {
+  width: 30%;
+  height: auto;
+  margin: 0em;
+}
+
+
+/* Styling Joshi Deel 3 */
+.yoshi3 {
+  position: absolute;
+  left: 0em;
+  bottom: 11em;
+  width: 8em;
+  margin: 0;
+  display:block;
+}
+
+.groenePijp.drie {
+  left:68em;
+}
+
+.groenePijp.drie:hover {
+  opacity: 80%;
+}
+
+.ei.twee img {
+  position: absolute;
+  left: 89em;
+  bottom: 0em;
+  width: 5em;
+  height: auto;
+}
+
+/* animatie ei 2 */
+@keyframes springen {
+  0% {
+    transform:translatey(0);
+  }
+
+  50% {
+    transform:translatey(-4em);
+  }
+
+  100%{
+    transform:translatey(0);
+  }
+}
+
+.ei.twee img:hover {
+  animation-name:springen;
+  animation-duration:.2s;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-fill-mode:none, 
+}
+
+.blokjeHorizontaal.twee {
+  display: flex;
+  position: absolute;
+  bottom: 10em;
+  left: 79em;
+}
+
+/* Styling Joshi Deel 4 */
+.yoshi4 {
+  position: absolute;
+  left: 0em;
+  bottom: 12em;
+  width: 7em;
+  margin: 0;
+  display:block;
+}
+
+.groenePijp.vier {
+  left:105em;
+}
+
+.groenePijp.vier:hover {
+  opacity: 80%;
+}
+
+.blokjeHoek.twee {
+  display: flex;
+  position: absolute;
+  bottom: 0em;
+  left: 118em;
+}
+
+.ei.drie img {
+  position: absolute;
+  left: 118em;
+  bottom: 17em;
+  width: 12em;
+  height: auto;
+}
+
+
+/* animatie ei 3 */
+@keyframes val {
+  0% {
+    transform:translate(3em, 5em) rotate(1turn);
+  }
+
+  25% {
+    transform:translate(5.5em, 6.5em) rotate(2turn);
+  }
+
+  50% {
+    transform:translate(9em, 8em) rotate(3turn);
+  }
+  
+  75% {
+    transform:translate(11em, 12em) rotate(4turn);
+  }
+
+  100% {
+    transform:translate(19em, 19em) rotate(5turn);
+  }
+}
+
+.ei.drie img:hover {
+  animation-name:val;
+  animation-duration:4.3s;
+  animation-delay:.3s;
+  animation-fill-mode:none, 
+}
+
+/* Styling Joshi Deel 5 */
+.yoshi5 {
+  position: absolute;
+  left: 0em;
+  bottom: 12em;
+  width: 10em;
+  margin: 0;
+  display: block;
+}
+
+.groenePijp.vijf {
+  left:150em;
+}
+
+.groenePijp.vijf:hover {
+  opacity: 80%;
+}
+
+.blokjeHorizontaal.drie {
+  display: flex;
+  position: absolute;
+  bottom: 10em;
+  left: 161em;
+}
+
+/* Styling Joshi Deel 6 */
+.yoshi6 {
+  position: absolute;
+  left: 0em;
+  bottom: 12em;
+  width: 9em;
+  margin: 0;
+  display:block;
+}
+
+.groenePijp.zes {
+  left:180em;
+}
+
+.groenePijp.zes:hover {
+  opacity: 80%;
+}
+
+
+/* Styling Einvlag */
+.eindvlag {
+  display: grid;
+  justify-items: center;
+  position: absolute;
+  right: 12em;
+  bottom: 0;
+  margin:0;
+}
+
+.eindvlag div:nth-of-type(1) {
+  width: 2em;
+  height: 25em;
+  background-color: var(--wit);
+  box-shadow: inset 0em 0em 0.6em .2em var(--shadowgrijs);
+}
+
+.eindvlag div:nth-of-type(2) {
+  width: 4em;
+  height: 4em;
+  border-radius: 3em;
+  background-color: var(--geel);
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 24em;
+  box-shadow: inset 0 -1em 1.4em -1em var(--shadowgrijs);
+}
+
+.eindvlag div img {
+  width: 8em;
+  height: 6em;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 3em;
+  left: 2em;
+}
+
+/* animatie 4 vlag */
+@keyframes vlag {
+  0% {
+    transform:translatey(0);
+  }
+
+  100% {
+    transform:translatey(-15em);
+  }
+}
+
+.eindvlag div img:hover {
+  animation-name:vlag;
+  animation-duration:1.5s;
+  animation-fill-mode: forwards;
+}
+
+/* buttons */
+button.button {
+  background-color:transparent;
+  border:none;
+  box-shadow: 0.2em 0.2em 0.2em -1em var(--shadowgrijs);
+  width: 5em;
+  height:5em;
+  position:absolute;
+  top: 5em;
+  right: 3em;
+}
+
+button.button:hover {
+  opacity: 85%;
+  box-shadow: inset 0.1em 0.2em 0.3em 0.2em var(--shadowgrijs);
+}
+
+button.reload {
+  background-color: var(--geel);
+  border:none;
+  box-shadow: 0.2em 0.2em 0.2em 0em var(--shadowgrijs);
+  width: 5em;
+  height:5em;
+  position:absolute;
+  top: 5em;
+  right: 3em;
+}
+
+button.reload:hover {
+  opacity: 85%;
+}
+
+button img {
+  width: 100%;
+}
+
+
+
